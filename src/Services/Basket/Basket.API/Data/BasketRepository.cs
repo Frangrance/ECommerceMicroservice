@@ -4,6 +4,15 @@ public class BasketRepository(IDocumentSession session) : IBasketRepository
 {
     public async Task<bool> DeleteBasket(string userName, CancellationToken cancellationToken = default)
     {
+        var basket = await GetBasket(userName, cancellationToken);
+
+        if (basket is null)
+
+        {
+
+            throw new BasketNotFoundException(userName);
+
+        }
         session.Delete<ShoppingCart>(userName);
         await session.SaveChangesAsync(cancellationToken);
         return true;

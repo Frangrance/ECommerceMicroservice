@@ -1,4 +1,5 @@
-﻿using BuildingBlocks.CQRS;
+﻿
+using BuildingBlocks.CQRS;
 using FluentValidation;
 using Ordering.Application.Dtos;
 
