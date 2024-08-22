@@ -45,12 +45,12 @@ services:
     build:
       context: .
       dockerfile: ApiGateways/YarpApiGateway/Dockerfile
-  
-  shopping.web:
-    image: ${DOCKER_REGISTRY-}shoppingweb
+
+  ecommerce.web:
+    image: ${DOCKER_REGISTRY-}ecommerceweb
     build:
       context: .
-      dockerfile: WebApps/Shopping.Web/Dockerfile
+      dockerfile: WebApps/ECommerce.Web/Dockerfile
 
 volumes:
   postgres_catalog:
